@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Review Platform</title>
+</head>
+<body>
+    <h1>Book Review Platform</h1>
+    <ul>
+        {% for book in books %}
+        <li>
+            <a href="/book/{{ book.id }}">{{ book.title }} by {{ book.author }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="/add">Add a New Book</a>
+</body>
+</html>

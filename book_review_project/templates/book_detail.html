@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ book.title }}</title>
+</head>
+<body>
+    <h1>{{ book.title }}</h1>
+    <h2>Author: {{ book.author }}</h2>
+    <h3>Reviews</h3>
+    <ul>
+        {% for review in book.reviews %}
+        <li>{{ review.reviewer }}: {{ review.comment }}</li>
+        {% endfor %}
+    </ul>
+    <form method="post">
+        <label for="reviewer">Your Name:</label>
+        <input type="text" name="reviewer" id="reviewer" required>
+        <br>
+        <label for="comment">Your Review:</label>
+        <textarea name="comment" id="comment" required></textarea>
+        <br>
+        <button type="submit">Submit Review</button>
+    </form>
+    <a href="/">Back to Home</a>
+</body>
+</html>
